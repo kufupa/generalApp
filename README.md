@@ -30,3 +30,7 @@ One Dark Pro Dark theme
 Make sure to download assets n constants folder and paste into app folder
 
 NEED AN INDEX.JS IN EACH FOLDER THAT EXPORTS EVERYTHING FROM OTHER FILES IN FOLDER I.E COMPONENTS FOLDER
+
+Use ctrl+/ to comment bc it might be diff depending which line ur on
+
+Export default only exports one thing, use export before func name to export multiple
