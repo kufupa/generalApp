@@ -34,3 +34,7 @@ NEED AN INDEX.JS IN EACH FOLDER THAT EXPORTS EVERYTHING FROM OTHER FILES IN FOLD
 Use ctrl+/ to comment bc it might be diff depending which line ur on
 
 Export default only exports one thing, use export before func name to export multiple
+
+TouchableOpacity is a button kinda - area that we can click
+IF A PARAMETER ISNT WORKING CHECK SPELLING
+Make sure to import everything in every file <- most goofy ahh errors
