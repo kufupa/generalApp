@@ -16,7 +16,7 @@ const Home = () => {
         <View style = {{zIndex: 0}}>
           <FlatList 
             data = {NFTData}
-            renderItem={({item}) => <Text>{item.name}</Text>}
+            renderItem={({item}) => <NFTCard data={item} />}
             // keyExtractor prop is used to keep track of the list items. This is helpful when you are adding or removing items dynamically to the list
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
