@@ -3,9 +3,21 @@ import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-nati
 import {COLORS, SIZES, SHADOWS, FONTS, assets} from '../constants'
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from "../components"
 
-const Details = () => {
+// Since using details in stack.screen in App.js, we get route and navigation by default
+const Details = ({route, navigation}) => {
+  const {data} = route.params;
+
   return (
-    <Text>Details</Text>
+    <SafeAreaView>
+      <FocusedStatusBar 
+        barStyle="dark-content" // Color of text n wifi n stuff
+        backgroundColor="transparent"
+        translucent={true}
+      />
+
+      <View></View>
+
+    </SafeAreaView>
     )
 }
 
