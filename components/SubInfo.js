@@ -36,7 +36,7 @@ export const People = () => {
     <View style={{flexDirection: "row"}}>
       {[assets.person02, assets.person03, assets.person04]
         .map((imgURL, index) =>
-        (<ImageCmp imgURL={imgURL} index={index} />))
+        (<ImageCmp imgURL={imgURL} index={index} key={index} />))
       }
     </View>
   )
