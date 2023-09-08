@@ -18,7 +18,7 @@ export const NFTTitle = ({title, subTitle, titleSize, subTitleSize}) => {
   )
 }
 
-export const EthPrice = () => {
+export const EthPrice = ({price}) => {
   return (
     <View>
       <Text>EthPrice</Text>
