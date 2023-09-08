@@ -38,3 +38,11 @@ Export default only exports one thing, use export before func name to export mul
 TouchableOpacity is a button kinda - area that we can click
 IF A PARAMETER ISNT WORKING CHECK SPELLING
 Make sure to import everything in every file <- most goofy ahh errors
+
+`Person: ${index}` === PYTHON F STRING
+
+(<ImageCmp imgURL={imgURL} index={index} />))
+THESE ARE "PROPS" not parameteres
+access in function definition like this:
+export const ImageCmp = ({imgURL, index}) => {
+
