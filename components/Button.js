@@ -31,10 +31,29 @@ export const CircleButton = ({imgURL, handlePress, ...props}) => {
   )
 }
 
-export const RectButton = () => {
+export const RectButton = ({minWidth, fontSize, handlePress, ...props}) => {
   return (
-    <View>
-      <Text>Button</Text>
-    </View>
-  )
+    <TouchableOpacity
+     style={{
+      backgroundColor: COLORS.primary,
+      borderRadius: SIZES.extraLarge, // Turns rect to a circle
+      minWidth: minWidth, // makes it from a circle to oval
+      padding: SIZES.small, // Increases height of oval thing
+      ...props // The other attributes like top and right
+     }}
+     onPress={handlePress}
+    >
+
+    {/* This is text inside the button */}
+    <Text style={{
+      fontFamily: FONTS.semiBold,
+      fontSize: fontSize,
+      color: COLORS.white,
+      textAlign: "center" 
+    }}>
+      Place a bid
+    </Text> 
+
+    </TouchableOpacity>
+ )
 }
