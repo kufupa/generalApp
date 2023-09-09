@@ -17,9 +17,10 @@ const Details = ({route, navigation}) => {
 
       <View style={{
         width:"100%", // Moves button to middle
-        position: "absolute",
-        bottom: 0,
-        paddingVertical: SIZES.font,
+        position: "absolute", // Makes sure buttom will always be in position
+        bottom: 0, // Moves button to bottom of SafeAreaView
+        //  paddingVertical == Offset AWAY from set position
+        paddingVertical: SIZES.font, // Moves upwards, AWAY from bottom
         justifyContent: "center",
         alignItems:"center", // Changes size of button from full width to middle
         backgroundColor: "rgba(255,255,255,0.5)", // 50% opacity,
