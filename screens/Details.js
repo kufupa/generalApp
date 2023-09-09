@@ -8,7 +8,7 @@ const Details = ({route, navigation}) => {
   const {data} = route.params;
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{flex: 1}}>
       <FocusedStatusBar 
         barStyle="dark-content" // Color of text n wifi n stuff
         backgroundColor="transparent"
@@ -16,15 +16,16 @@ const Details = ({route, navigation}) => {
       />
 
       <View style={{
-        width:"100%",
+        width:"100%", // Moves button to middle
         position: "absolute",
         bottom: 0,
         paddingVertical: SIZES.font,
         justifyContent: "center",
-        alignItems:"center",
+        alignItems:"center", // Changes size of button from full width to middle
         backgroundColor: "rgba(255,255,255,0.5)", // 50% opacity,
         zIndex: 1
       }}>
+
         <RectButton 
           minWidth={170}
           fontSize={SIZES.large}
