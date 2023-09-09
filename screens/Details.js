@@ -15,8 +15,27 @@ const Details = ({route, navigation}) => {
         translucent={true}
       />
 
-      <View></View>
+      <View style={{
+        width:"100%",
+        position: "absolute",
+        bottom: 0,
+        paddingVertical: SIZES.font,
+        justifyContent: "center",
+        alignItems:"center",
+        backgroundColor: "rgba(255,255,255,0.5)", // 50% opacity,
+        zIndex: 1
+      }}>
+        <RectButton 
+          minWidth={170}
+          fontSize={SIZES.large}
+          {...SHADOWS.dark }
+        />
+      </View>
 
+      <FlatList 
+        data={data.bids}
+        // renderItem={({item}) => <DetailsBid bid={item} />}
+      />
     </SafeAreaView>
     )
 }
