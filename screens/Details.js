@@ -1,7 +1,5 @@
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native"
 
-import Carousel from "react-native-snap-carousel"
-
 import {COLORS, SIZES, SHADOWS, FONTS, assets} from '../constants'
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from "../components"
 
