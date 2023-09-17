@@ -45,7 +45,6 @@ const Home = () => {
           <View style = {{flex: 1, backgroundColor: COLORS.white}}/>
         </View>
       </View>
-      <Profile></Profile>
     </SafeAreaView>
   )
 }
