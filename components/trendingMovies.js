@@ -3,8 +3,8 @@ import React from 'react'
 
 const trendingMovies = () => {
   return (
-    <View class-name="mb-8">
-      <Text>trendingMovies</Text>
+    <View className="mb-8"> // With margin bottom of 8
+      <Text class->trendingMovies</Text>
     </View>
   )
 }
