@@ -8,7 +8,6 @@ import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../components/i
 import Profile from './Profile';
 
 
-
 const Home = () => {
   const [trending, setTrending] = useState([1,2,3])
   return (
