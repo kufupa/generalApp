@@ -12,7 +12,7 @@ const Details = ({route, navigation}) => {
       <FocusedStatusBar 
         barStyle="dark-content" // Color of text n wifi n stuff
         backgroundColor="transparent"
-        translucent={true}
+        translucent={true} // Status bar entirely blends into background
       />
 
       <View style={{
@@ -36,7 +36,10 @@ const Details = ({route, navigation}) => {
 
       <FlatList 
         data={data.bids}
-        // renderItem={({item}) => <DetailsBid bid={item} />}
+        renderItem = {({item}) => <DetailsBid /> }
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{paddingBottom: SIZES.extraLarge*3}}
       />
     </SafeAreaView>
     )
