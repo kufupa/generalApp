@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, Image, StatusBar, FlatList } from "react-native"
-
+import React from "react"
 import {COLORS, SIZES, SHADOWS, FONTS, assets} from '../constants'
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from "../components"
 
@@ -40,6 +40,11 @@ const Details = ({route, navigation}) => {
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: SIZES.extraLarge*3}}
+        ListHeaderComponent={() => ( // React component on top of flatlist
+          <React.Fragment>
+            <DetailsHeader />
+          </React.Fragment>
+        )}
       />
     </SafeAreaView>
     )
