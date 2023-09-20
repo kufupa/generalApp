@@ -1,14 +1,13 @@
-import { Text, View, SafeAreaView, FlatList, ScrollView } from 'react-native'
+import { Text, View, SafeAreaView, FlatList, ScrollView, Button } from 'react-native'
 import { useState } from 'react';
 
 // Flatlist = lazy loading when on / off screen so pretty gamer
 
-import {COLORS, NFTData} from "../constants";
-import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../components/index.js";
-import Profile from './Profile';
+import {COLORS, NFTData} from "../../constants";
+import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../../components/index.js";
+import Profile from '../../components/Profile';
 
-
-const Home = () => {
+const Home = ({ navigation }) => {
   const [trending, setTrending] = useState([1,2,3])
   return (
     <SafeAreaView style={{flex: 1}}>
@@ -43,7 +42,12 @@ const Home = () => {
           <View style = {{height: 300, backgroundColor: COLORS.primary}}/>
           <View style = {{flex: 1, backgroundColor: COLORS.white}}/>
         </View>
+        
       </View>
+      <Button
+      title="Your Profile"
+      onPress={() => navigation.navigate('Profile')}
+      />
     </SafeAreaView>
   )
 }
