@@ -21,7 +21,17 @@ const DetailsBid = ({bid}) => {
         }}>
           Bid placed by {bid.name}
         </Text>
+        <Text style={{
+          fontFamily: FONTS.regular,
+          fontSize: SIZES.small - 2,
+          color: COLORS.secondary,
+          marginTop: 3
+        }}>
+          {bid.date}
+        </Text>
       </View>
+
+      
 
     </View>
   )
