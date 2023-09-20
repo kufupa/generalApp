@@ -9,7 +9,10 @@ const DetailsDesc = ({data}) => {
   return (
     <>
       <View style={{
-       
+        width: "100%",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center"
       }}>
         <NFTTitle 
           title={data.name}
