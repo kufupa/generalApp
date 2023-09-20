@@ -51,6 +51,7 @@ const DetailsDesc = ({data}) => {
           fontFamily: FONTS.semiBold,
           color: COLORS.primary,
         }}>
+          {readMore ? ' Show Less ' : ' Read More'}
         </Text>
 
         </Text>
