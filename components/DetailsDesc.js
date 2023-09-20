@@ -6,6 +6,9 @@ import {COLORS, SIZES, FONTS} from '../constants'
 
 // Title, price, description of NFT being viewed
 const DetailsDesc = ({data}) => {
+  const [text, setText] = useState(data.description.slice(0,100));
+  const [readMore, setreadMore] = useState(false);
+
   return (
     <>
       <View style={{
