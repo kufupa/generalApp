@@ -68,6 +68,7 @@ const Details = ({route, navigation}) => {
         ListHeaderComponent={() => ( // React component on top of flatlist
           <React.Fragment>
             <DetailsHeader data={data} navigation={navigation} />
+            <SubInfo></SubInfo>
           </React.Fragment>
         )}
       />
