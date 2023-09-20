@@ -79,7 +79,7 @@ const Details = ({route, navigation}) => {
                   color: COLORS.primary,
                   marginTop: SIZES.extraLarge
                 }}>
-                  Current Bid
+                  Current Bids
                 </Text>
               )}
 
