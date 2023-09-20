@@ -46,7 +46,12 @@ const DetailsDesc = ({data}) => {
         
         {text}
         {!readMore && "..."}
-        
+        <Text style={{
+          fontSize: SIZES.small,
+          fontFamily: FONTS.semiBold,
+          color: COLORS.primary,
+        }}>
+        </Text>
 
         </Text>
       </View>
