@@ -9,7 +9,8 @@ import Profile from './Profile';
 
 
 const Home = () => {
-  const [trending, setTrending] = useState([1,2,3])
+  const [nftData, setNftData] = useState(NFTData);
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <FocusedStatusBar background={COLORS.primary} />
