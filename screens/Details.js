@@ -61,7 +61,7 @@ const Details = ({route, navigation}) => {
 
       <FlatList 
         data={data.bids}
-        renderItem = {({item}) => <DetailsBid /> }
+        renderItem = {({item}) => <DetailsBid bid={item} /> }
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{paddingBottom: SIZES.extraLarge*3}}
