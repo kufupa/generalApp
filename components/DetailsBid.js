@@ -9,7 +9,10 @@ const DetailsBid = ({bid}) => {
     <View style={{
       width: "100%",
       flexDirection: "row",
-      
+      justifyContent: "space-between",
+      alignItems: "center",
+      marginVertical: SIZES.base,
+      paddingHorizontal: SIZES.base
     }}>
       <Image 
         source={bid.image}
