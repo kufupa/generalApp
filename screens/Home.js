@@ -11,6 +11,26 @@ import Profile from './Profile';
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
 
+  const handleSearch = (value) => {
+    // If user hasn't typed anything
+    // Use return so no need for else
+    if (!value.length) return setNftData(NFTData);
+    // } else {
+    const filteredData = NFTData.filter((item) => 
+      item.name.toLowerCase().includes(value.toLowerCase)
+    );
+
+    // If has any results
+    if (filteredData.length) {
+      setNftData(filteredData);
+    } else {
+      setNftData(NFTData);
+    }
+    
+
+    
+  }
+
   return (
     <SafeAreaView style={{flex: 1}}>
       <FocusedStatusBar background={COLORS.primary} />
@@ -20,7 +40,7 @@ const Home = () => {
         <View style = {{zIndex: 0}}>
           <Background>
           <FlatList 
-            data = {NFTData}
+            data = {nftData}
             renderItem={({item}) => <NFTCard data={item} />}
             // keyExtractor prop is used to keep track of the list items. This is helpful when you are adding or removing items dynamically to the list
             keyExtractor={(item) => item.id}
