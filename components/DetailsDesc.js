@@ -7,7 +7,7 @@ import {COLORS, SIZES, FONTS} from '../constants'
 // Title, price, description of NFT being viewed
 const DetailsDesc = ({data}) => {
   const [text, setText] = useState(data.description.slice(0,100));
-  const [readMore, setreadMore] = useState(false);
+  const [readMore, setReadMore] = useState(false);
 
   return (
     <>
@@ -50,8 +50,18 @@ const DetailsDesc = ({data}) => {
           fontSize: SIZES.small,
           fontFamily: FONTS.semiBold,
           color: COLORS.primary,
-        }}>
-          {readMore ? ' Show Less ' : ' Read More'}
+          }}
+          onPress={() => {
+            if (!readMore) {
+              setText(data.description);
+              setReadMore(true);
+            } else {
+              setText(data.description.slice(0,100));
+              setReadMore(false);
+            }
+          }}
+        >
+          {readMore ? '\nShow Less ' : '  Read More'}
         </Text>
 
         </Text>
