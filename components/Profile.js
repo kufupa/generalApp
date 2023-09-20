@@ -1,7 +1,7 @@
 import React from "react";
 import { View, ScrollView, TouchableHighlight, TouchableOpacity, Image, Text } from "react-native";
 import { COLORS, assets } from "../constants";
-import { RectButton } from "../components/Button";
+import { RectButton } from "./Button";
 
 const Profile = ({ data }) => {
     return (

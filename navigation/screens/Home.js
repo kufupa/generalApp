@@ -5,11 +5,11 @@ import { useState } from 'react';
 
 import {COLORS, NFTData} from "../../constants";
 import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../../components/index.js";
-import Profile from './Profile';
+import Profile from '../../components/Profile';
 
 
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [trending, setTrending] = useState([1,2,3])
   return (
     <SafeAreaView style={{flex: 1}}>
