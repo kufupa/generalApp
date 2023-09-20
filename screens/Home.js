@@ -17,7 +17,7 @@ const Home = () => {
     if (!value.length) return setNftData(NFTData);
     // } else {
     const filteredData = NFTData.filter((item) => 
-      item.name.toLowerCase().includes(value.toLowerCase)
+      item.name.toLowerCase().includes(value.toLowerCase())
     );
 
     // If has any results
@@ -26,9 +26,6 @@ const Home = () => {
     } else {
       setNftData(NFTData);
     }
-    
-
-    
   }
 
   return (
