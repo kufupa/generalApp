@@ -5,7 +5,17 @@ import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, Detai
 
 const DetailsHeader = ({data, navigation}) => (
   <View style={{width: "100%", height: 373}}>
-    
+    <Image 
+      source={data.image} 
+      resizeMode="cover"
+      style={{width: "100%", height: "100%"}}
+    />
+
+    <CircleButton 
+      imgURL={assets.left}
+      handlePress={() => navigation.goBack()}
+    />
+
   </View>
 )
 
@@ -48,7 +58,7 @@ const Details = ({route, navigation}) => {
         contentContainerStyle={{paddingBottom: SIZES.extraLarge*3}}
         ListHeaderComponent={() => ( // React component on top of flatlist
           <React.Fragment>
-            <DetailsHeader />
+            <DetailsHeader data={data} navigation={navigation} />
           </React.Fragment>
         )}
       />
