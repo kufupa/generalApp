@@ -25,12 +25,21 @@ const DetailsDesc = ({data}) => {
       </View>
 
       {/* Vertical margin for space between name and description */}
-      <View style={{marginVertical: SIZES.extraLarge * 1.5}}>
+      <View style={{marginTop: SIZES.extraLarge * 1.5}}>
         <Text style={{
           fontSize: SIZES.font,
           fontFamily: FONTS.semiBold,
           color: COLORS.primary
-        }} >description</Text>
+        }}>Description</Text>
+      </View>
+
+      <View style={{marginTop: SIZES.base}}>
+      <Text style={{
+          fontSize: SIZES.small,
+          fontFamily: FONTS.regular,
+          color: COLORS.secondary,
+          lineHeight: SIZES.large
+        }}>{data.description}</Text>
       </View>
       
     </>
