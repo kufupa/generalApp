@@ -44,12 +44,7 @@ const Home = ({ navigation }) => {
           <View style = {{height: 300, backgroundColor: COLORS.primary}}/>
           <View style = {{flex: 1, backgroundColor: COLORS.white}}/>
         </View>
-        
       </View>
-      <Button
-      title="Your Profile"
-      onPress={() => navigation.navigate('Profile')}
-      />
     </SafeAreaView>
   )
 }

@@ -1,12 +1,17 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-ionicons';
 
 import Home from './navigation/screens/Home';
 import Details from './navigation/screens/Details';
 import ProfileScreen from './navigation/screens/ProfileScreen';
+import SettingsScreen from './navigation/screens/SettingsScreen';
+import MainContainer from './navigation/MainContainer';
 
-const Stack = createStackNavigator();
+// const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -31,14 +36,42 @@ const App = () => {
 
 
   return (
-    <NavigationContainer theme={theme}>
-      <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="Details" component={Details}/>
-        <Stack.Screen name="Profile" component={ProfileScreen}/>
+    // <NavigationContainer theme={theme}>
+    //   <Stack.Navigator screenOptions={{headerShown: false}} initialRouteName="Home">
+    //     <Stack.Screen name='Home' component={Home}/>
+    //     <Stack.Screen name='Details' component={Details}/>
+    //     <Stack.Screen name='Profile' component={ProfileScreen}/>
 
-      </Stack.Navigator>
-    </NavigationContainer>
+    //   </Stack.Navigator>
+    // </NavigationContainer>
+    <NavigationContainer theme={theme}>
+        <Tab.Navigator
+        initialRouteName={'Home'}
+        screenOptions={({route}) => ({
+            tabBarIcon: ({focused, color, size}) => {
+                let iconName;
+                let rn = route.name;
+
+                if (rn == 'Home') {
+                    iconName = focused ? 'home' : 'home-outline'
+                } else if (rn == 'Details') {
+                    iconName = focused ? 'list' : 'list-outline'
+                } else if (rn == 'Settings') {
+                    iconName = focused ? 'settings' : 'settings-outline'
+                }
+
+                return <Icon name={iconName} size={size} color={color}/>
+            },
+        })}
+        >
+            <Tab.Screen name={'Home'} component={Home}/>
+            <Tab.Screen name={'Details'} component={Details}/>
+            <Tab.Screen name={'Profile'} component={ProfileScreen}/>
+            <Tab.Screen name={'Settings'} component={SettingsScreen}/>
+
+        </Tab.Navigator>
+      </NavigationContainer>
+    
   );
 }
 
