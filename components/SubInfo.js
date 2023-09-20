@@ -91,6 +91,7 @@ export const EndDate = () => {
   )
 }
 
+// People overlapping and ending in timer
 export const SubInfo = () => {
   return (
     <View style={{

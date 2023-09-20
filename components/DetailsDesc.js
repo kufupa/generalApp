@@ -1,11 +1,26 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import {React, useState} from 'react'
 
-const DetailsDesc = () => {
+import { EthPrice, NFTTitle } from './SubInfo'
+import {COLORS, SIZES, FONTS} from '../constants'
+
+// Title, price, description of NFT being viewed
+const DetailsDesc = ({data}) => {
   return (
-    <View>
-      <Text>DetailsDesc</Text>
-    </View>
+    <>
+      <View style={{
+       
+      }}>
+        <NFTTitle 
+          title={data.name}
+          subTitle={data.creator}
+          titleSize={SIZES.extraLarge}
+          subTitleSize={SIZES.font}
+        />
+
+        <EthPrice price={data.price} />
+      </View>
+    </>
   )
 }
 
