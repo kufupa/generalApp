@@ -14,6 +14,15 @@ const DetailsHeader = ({data, navigation}) => (
     <CircleButton 
       imgURL={assets.left}
       handlePress={() => navigation.goBack()}
+      left={15}
+      top={StatusBar.currentHeight + 10} // Offset back button
+    />
+
+    <CircleButton 
+      imgURL={assets.heart}
+      handlePress={() => navigation.goBack()}
+      right={15}
+      top={StatusBar.currentHeight + 10}
     />
 
   </View>
