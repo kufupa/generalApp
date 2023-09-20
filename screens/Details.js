@@ -3,8 +3,10 @@ import React from "react"
 import {COLORS, SIZES, SHADOWS, FONTS, assets} from '../constants'
 import { CircleButton, RectButton, SubInfo, FocusedStatusBar, DetailsDesc, DetailsBid } from "../components"
 
-const DetailsHeader = () => (
-  
+const DetailsHeader = ({data, navigation}) => (
+  <View style={{width: "100%", height: 373}}>
+    
+  </View>
 )
 
 // Since using details in stack.screen in App.js, we get route and navigation by default
