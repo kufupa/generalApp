@@ -46,7 +46,7 @@ const Home = () => {
             keyExtractor={(item) => item.id}
             showsVerticalScrollIndicator={false}
             // HomeHeader component rendered on top of list
-            ListHeaderComponent={<HomeHeader />}
+            ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           />
           </Background>
         </View>
