@@ -23,6 +23,16 @@ const DetailsDesc = ({data}) => {
 
         <EthPrice price={data.price} />
       </View>
+
+      {/* Vertical margin for space between name and description */}
+      <View style={{marginVertical: SIZES.extraLarge * 1.5}}>
+        <Text style={{
+          fontSize: SIZES.font,
+          fontFamily: FONTS.semiBold,
+          color: COLORS.primary
+        }} >description</Text>
+      </View>
+      
     </>
   )
 }
