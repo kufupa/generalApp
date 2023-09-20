@@ -1,4 +1,4 @@
-import { Text, View, SafeAreaView, FlatList, ScrollView } from 'react-native'
+import { Text, View, SafeAreaView, FlatList, ScrollView, Button } from 'react-native'
 import { useState } from 'react';
 
 // Flatlist = lazy loading when on / off screen so pretty gamer
@@ -46,7 +46,10 @@ const Home = ({ navigation }) => {
         </View>
         
       </View>
-      <Profile></Profile>
+      <Button
+      title="Your Profile"
+      onPress={() => navigation.navigate('Profile')}
+      />
     </SafeAreaView>
   )
 }
