@@ -106,3 +106,5 @@ export const SubInfo = () => {
     </View>
   )
 }
+
+export default SubInfo;
