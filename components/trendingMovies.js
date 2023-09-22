@@ -1,31 +1,39 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Carousel from 'react-native-reanimated-carousel'
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
+import { View, Text } from "react-native";
+import React from "react";
+import Carousel from "react-native-reanimated-carousel";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
-const trendingMovies = () => {
+const TrendingMovies = ({ data }) => {
   return (
-    <View className="mb-8"> // With margin bottom of 8
-      <Text className="text-white text-xl mx-4 mb-5">trendingMovies</Text>
+    <View style={{ marginBottom: 8 }}>
+      <Text
+        style={{
+          color: "white",
+          fontSize: 50, // text-xl
+          marginHorizontal: 4,
+          marginBottom: 5,
+        }}>
+        trendingMovies
+      </Text>
       <Carousel
         data={data}
-        renderItem={({item}) => <MovieCard item={item} />}
+        renderItem={({ item }) => <MovieCard item={item} />}
         firstItem={1} // Index of items in array
-        inactiveSlideOpacity={0.60}
+        inactiveSlideOpacity={0.6}
         sliderWidth={600}
         itemWidth={400}
-        sliderStyle={{display: 'flex', alignItems: 'center'}}
-      /> 
+        sliderStyle={{ display: "flex", alignItems: "center" }}
+      />
     </View>
-  )
-}
+  );
+};
 
-export default trendingMovies
+export default TrendingMovies;
 
-const MovieCard = ({item}) => {
+const MovieCard = ({ item }) => {
   return (
     <TouchableWithoutFeedback>
-      <Text>MOVIE CARD</Text>
+      <Text style={{ color: "white" }}>MovieCard</Text>
     </TouchableWithoutFeedback>
-  )
-}
+  );
+};
