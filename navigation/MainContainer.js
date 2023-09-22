@@ -5,10 +5,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-ionicons';
 
 // Screens
-import Home from './screens/Home';
-import Details from './screens/Details';
-import ProfileScreen from './screens/ProfileScreen';
-import SettingsScreen from './screens/SettingsScreen';
+import HomeNavigator from './HomeNavigator'
+import ProfileScreen from '../screens/ProfileScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,8 +22,9 @@ const theme = {
 const MainContainer = () => {
     return (
         <NavigationContainer theme={theme}>
-        <Tab.Navigator
-        initialRouteName={'Home'}
+          <Tab.Navigator
+            screenOptions={{ headerShown: false }}
+            initialRouteName={'HomeNavigator'}
         // screenOptions={({route}) => ({
         //     tabBarIcon: ({focused, color, size}) => {
         //         let iconName;
@@ -42,8 +42,7 @@ const MainContainer = () => {
         //     },
         // })}
         >
-            <Tab.Screen name={'Home'} component={Home}/>
-            <Tab.Screen name={'Details'} component={Details}/>
+            <Tab.Screen name={'HomeNavigator'} component={HomeNavigator}/>
             <Tab.Screen name={'Profile'} component={ProfileScreen}/>
             <Tab.Screen name={'Settings'} component={SettingsScreen}/>
 

@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 import {COLORS, NFTData} from "../constants";
 import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../components/index.js";
-import Profile from './Profile';
 
 
 const Home = () => {
