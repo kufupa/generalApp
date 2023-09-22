@@ -14,8 +14,7 @@ const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <FocusedStatusBar background={COLORS.primary} />
-
-      <View style = {{flex: 1}}>
+      <ScrollView style = {{flex: 1}}>
         {/* Div containing nft list */}
         <View style = {{zIndex: 0}}>
           <Background>
@@ -44,7 +43,7 @@ const Home = ({ navigation }) => {
           <View style = {{height: 300, backgroundColor: COLORS.primary}}/>
           <View style = {{flex: 1, backgroundColor: COLORS.white}}/>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
