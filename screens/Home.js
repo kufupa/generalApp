@@ -6,9 +6,11 @@ import { useState } from 'react';
 import {COLORS, NFTData} from "../constants";
 import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../components/index.js";
 
+import TrendingMovies from '../components/TrendingMovies';
 
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
+  const [trending, setTrending] = useState([1,2,3]);
 
   const handleSearch = (value) => {
     // If user hasn't typed anything
@@ -30,6 +32,8 @@ const Home = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <FocusedStatusBar background={COLORS.primary} />
+
+      <TrendingMovies data={trending} />
 
       <View style = {{flex: 1}}>
         {/* Div containing nft list */}

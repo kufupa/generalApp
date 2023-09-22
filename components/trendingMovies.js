@@ -1,28 +1,40 @@
-import { View, Text } from "react-native";
+import { View, Text, TouchableWithoutFeedback, Dimensions, Image } from "react-native";
 import React from "react";
 import Carousel from "react-native-reanimated-carousel";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
+var {width, height} = Dimensions.get("window");
 const TrendingMovies = ({ data }) => {
   return (
-    <View style={{ marginBottom: 8 }}>
+    <View style={{
+        borderWidth: 1,
+        justifyContent: 'center',
+        alignItems: "center",
+        marginBottom: 8 
+      }}>
       <Text
         style={{
-          color: "white",
-          fontSize: 50, // text-xl
+          color: "black",
+          fontSize: 20, // text-xl
           marginHorizontal: 4,
           marginBottom: 5,
         }}>
-        trendingMovies
-      </Text>
+        Trending Movies: </Text>
+        
       <Carousel
+        loop
+        style={{}}
+        width={width}
+        height={height/1.5}
+        autoPlay={true}
         data={data}
-        renderItem={({ item }) => <MovieCard item={item} />}
-        firstItem={1} // Index of items in array
-        inactiveSlideOpacity={0.6}
-        sliderWidth={600}
-        itemWidth={400}
-        sliderStyle={{ display: "flex", alignItems: "center" }}
+        mode="parallax"
+        parallaxScrollingScale={0.9}
+        parallaxScrollingOffset={50}
+        scrollAnimationDuration={1000}
+        onSnapToItem={index => (index)}
+        renderItem={({index}) => (
+          <MovieCard data={index} />
+        ) }
       />
     </View>
   );
@@ -32,8 +44,24 @@ export default TrendingMovies;
 
 const MovieCard = ({ item }) => {
   return (
-    <TouchableWithoutFeedback>
-      <Text style={{ color: "white" }}>MovieCard</Text>
-    </TouchableWithoutFeedback>
+    <View
+      style={{
+          flex: 1,
+          borderWidth: 1,
+          justifyContent: 'center',
+          alignItems: "center"
+      }}
+    >
+      <TouchableWithoutFeedback>
+        <Image
+          source={require("../assets/images/LegoNinjagoMoviePoster2.png")}
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: 20, // Turns rect to a circle
+          }}
+        />
+      </TouchableWithoutFeedback>
+    </View>
   );
 };
