@@ -12,10 +12,12 @@ import {
 } from "../components/index.js";
 
 import TrendingMovies from "../components/TrendingMovies";
+import MovieList from "../components/MovieList";
 
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
   const [trending, setTrending] = useState([1, 2, 3]);
+  const [upcoming, setUpcoming] = useState([1, 2, 3]);
 
   const handleSearch = (value) => {
     // If user hasn't typed anything
@@ -42,6 +44,10 @@ const Home = () => {
         {/* Div containing nft list */}
         <ScrollView>
           <TrendingMovies data={trending} />
+          <MovieList
+            title="Upcoming"
+            data={upcoming}
+          />
           <View style={{ zIndex: 0 }}>
             <Background>
               <FlatList

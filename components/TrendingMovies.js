@@ -10,10 +10,16 @@ import {
 import Carousel from "react-native-reanimated-carousel";
 import { useState } from "react";
 import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants";
+import { useNavigation } from "@react-navigation/native";
 
 var { width, height } = Dimensions.get("window");
 const TrendingMovies = ({ data }) => {
   const [snapIndex, setSnapIndex] = useState(0);
+  const navigation = useNavigation();
+
+  const handleClick = (item) => {
+    navigation.navigate("MovieScreen", item);
+  };
 
   return (
     <View
@@ -70,6 +76,7 @@ const MovieCard = ({ focus }) => {
       <TouchableWithoutFeedback>
         <Image
           source={require("../assets/images/LegoNinjagoMoviePoster2.png")}
+          onPress={(item) => handleClick(item)}
           style={
             !focus
               ? {
