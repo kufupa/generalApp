@@ -1,46 +1,54 @@
-import { View, Text, TouchableWithoutFeedback, Dimensions, Image, StyleSheet } from "react-native";
-import React from "react";
+import {
+  View,
+  Text,
+  TouchableWithoutFeedback,
+  Dimensions,
+  Image,
+  StyleSheet,
+} from "react-native";
 import Carousel from "react-native-reanimated-carousel";
+import { useState } from "react";
 
-var {width, height} = Dimensions.get("window");
+var { width, height } = Dimensions.get("window");
 const TrendingMovies = ({ data }) => {
+  const [snapIndex, setSnapIndex] = useState(0);
+
   return (
-    <View style={{
+    <View
+      style={{
         borderWidth: 1,
-        justifyContent: 'center',
+        justifyContent: "center",
         alignItems: "center",
-        marginBottom: 8 
+        marginBottom: 8,
+        backgroundColor: "#000000",
       }}>
       <Text
         style={{
-          color: "black",
+          color: "white",
           fontSize: 20, // text-xl
           marginHorizontal: 4,
           marginBottom: 5,
         }}>
-        Trending Movies: </Text>
-        
+        Trending Movies:
+      </Text>
+
       <Carousel
         loop
         style={{
           width: width * 1,
-          height: height*0.6,
+          height: height * 0.6,
           justifyContent: "center",
-          backgroundColor: "#000000",
-
         }}
-        width={width*0.8}
-        height={height*0.6}
+        width={width * 0.8}
+        height={height * 0.6}
         autoPlay={true}
         data={data}
         mode="parallax"
         parallaxScrollingScale={0.9}
         parallaxScrollingOffset={50}
         scrollAnimationDuration={1000}
-        onSnapToItem={index => (index)}
-        renderItem={({index}) => (
-          <MovieCard data={index} />
-        ) }
+        // onSnapToItem={}
+        renderItem={({ index }) => <MovieCard />}
       />
     </View>
   );
@@ -48,26 +56,34 @@ const TrendingMovies = ({ data }) => {
 
 export default TrendingMovies;
 
-const MovieCard = ({ item }) => {
+const MovieCard = ({ focus }) => {
   return (
     <View
       style={{
-          flex: 1,
-          borderWidth: 1,
-          justifyContent: 'center',
-          alignItems: "center"
-      }}
-    >
+        flex: 1,
+        borderWidth: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}>
       <TouchableWithoutFeedback>
         <Image
           source={require("../assets/images/LegoNinjagoMoviePoster2.png")}
-          style={{
-            width: "80%",
-            height: "80%",
-            borderRadius: 20, // Turns rect to a circle
-          }}
+          style={
+            !focus
+              ? {
+                  width: "80%",
+                  height: "80%",
+                  borderRadius: 20, // Turns rect to a circle
+                }
+              : {
+                  width: "60%",
+                  height: "60%",
+                  borderRadius: 20, // Turns rect to a circle
+                }
+          }
         />
       </TouchableWithoutFeedback>
+      <Text style={{ color: "white" }}>{focus}</Text>
     </View>
   );
 };
