@@ -28,7 +28,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-snap-carousel": "^1.6.1",
     "react-native-web": "~0.19.6",
-    "react-navigation": "^4.4.4"
+    "react-navigation": "^4.4.4",
+    "@expo/webpack-config": "^19.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
