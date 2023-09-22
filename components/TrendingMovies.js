@@ -6,8 +6,10 @@ import {
   Image,
   StyleSheet,
 } from "react-native";
+
 import Carousel from "react-native-reanimated-carousel";
 import { useState } from "react";
+import { COLORS, SIZES, SHADOWS, FONTS, assets } from "../constants";
 
 var { width, height } = Dimensions.get("window");
 const TrendingMovies = ({ data }) => {
@@ -17,19 +19,19 @@ const TrendingMovies = ({ data }) => {
     <View
       style={{
         borderWidth: 1,
-        justifyContent: "center",
-        alignItems: "center",
         marginBottom: 8,
         backgroundColor: "#000000",
       }}>
       <Text
         style={{
           color: "white",
-          fontSize: 20, // text-xl
-          marginHorizontal: 4,
-          marginBottom: 5,
+          fontFamily: FONTS.bold,
+          fontSize: 25, // text-xl
+          marginLeft: 25,
+          marginTop: 50,
+          marginBottom: -50,
         }}>
-        Trending Movies:
+        Trending
       </Text>
 
       <Carousel
@@ -83,7 +85,6 @@ const MovieCard = ({ focus }) => {
           }
         />
       </TouchableWithoutFeedback>
-      <Text style={{ color: "white" }}>{focus}</Text>
     </View>
   );
 };

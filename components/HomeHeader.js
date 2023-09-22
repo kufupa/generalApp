@@ -13,6 +13,7 @@ const HomeHeader = ({ onSearch }) => {
         backgroundColor: COLORS.primary,
         padding: SIZES.font,
       }}>
+      {/* <TrendingMovies data={trending} /> */}
       <View
         style={{
           flexDirection: "row",

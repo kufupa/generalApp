@@ -37,23 +37,25 @@ const Home = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar background={COLORS.primary} />
-      <TrendingMovies data={trending} />
 
       <View style={{ flex: 1 }}>
         {/* Div containing nft list */}
-        <View style={{ zIndex: 0 }}>
-          <Background>
-            <FlatList
-              data={nftData}
-              renderItem={({ item }) => <NFTCard data={item} />}
-              // keyExtractor prop is used to keep track of the list items. This is helpful when you are adding or removing items dynamically to the list
-              keyExtractor={(item) => item.id}
-              showsVerticalScrollIndicator={false}
-              // HomeHeader component rendered on top of list
-              ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
-            />
-          </Background>
-        </View>
+        <ScrollView>
+          <TrendingMovies data={trending} />
+          <View style={{ zIndex: 0 }}>
+            <Background>
+              <FlatList
+                data={nftData}
+                renderItem={({ item }) => <NFTCard data={item} />}
+                // keyExtractor prop is used to keep track of the list items. This is helpful when you are adding or removing items dynamically to the list
+                keyExtractor={(item) => item.id}
+                showsVerticalScrollIndicator={false}
+                // HomeHeader component rendered on top of list
+                ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
+              />
+            </Background>
+          </View>
+        </ScrollView>
 
         {/* The black / white top bottom background */}
 
