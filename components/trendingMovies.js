@@ -1,4 +1,4 @@
-import { View, Text, TouchableWithoutFeedback, Dimensions, Image } from "react-native";
+import { View, Text, TouchableWithoutFeedback, Dimensions, Image, StyleSheet } from "react-native";
 import React from "react";
 import Carousel from "react-native-reanimated-carousel";
 
@@ -22,9 +22,15 @@ const TrendingMovies = ({ data }) => {
         
       <Carousel
         loop
-        style={{}}
-        width={width}
-        height={height/1.5}
+        style={{
+          width: width * 1,
+          height: height*0.6,
+          justifyContent: "center",
+          backgroundColor: "#000000",
+
+        }}
+        width={width*0.8}
+        height={height*0.6}
         autoPlay={true}
         data={data}
         mode="parallax"
@@ -56,8 +62,8 @@ const MovieCard = ({ item }) => {
         <Image
           source={require("../assets/images/LegoNinjagoMoviePoster2.png")}
           style={{
-            width: "100%",
-            height: "100%",
+            width: "80%",
+            height: "80%",
             borderRadius: 20, // Turns rect to a circle
           }}
         />
