@@ -4,8 +4,7 @@ import { useState } from 'react';
 // Flatlist = lazy loading when on / off screen so pretty gamer
 
 import {COLORS, NFTData} from "../../constants";
-import {NFTCard, HomeHeader, FocusedStatusBar, Background} from "../../components/index.js";
-import Profile from '../../components/Profile';
+import {NFTCard, HomeHeader, FocusedStatusBar, Background, HorizontalList} from "../../components/index.js";
 
 
 
@@ -43,6 +42,7 @@ const Home = ({ navigation }) => {
           <View style = {{height: 300, backgroundColor: COLORS.primary}}/>
           <View style = {{flex: 1, backgroundColor: COLORS.white}}/>
         </View>
+        <HorizontalList></HorizontalList>
       </ScrollView>
     </SafeAreaView>
   )
