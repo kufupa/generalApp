@@ -3,6 +3,7 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 
 import Home from "../screens/Home";
 import Details from "../screens/Details";
+import MovieScreen from "../screens/MovieScreen";
 
 const Stack = createStackNavigator();
 

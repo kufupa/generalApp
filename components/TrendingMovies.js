@@ -17,10 +17,6 @@ const TrendingMovies = ({ data }) => {
   const [snapIndex, setSnapIndex] = useState(0);
   const navigation = useNavigation();
 
-  const handleClick = (item) => {
-    navigation.navigate("MovieScreen", item);
-  };
-
   return (
     <View
       style={{
@@ -56,7 +52,7 @@ const TrendingMovies = ({ data }) => {
         parallaxScrollingOffset={50}
         scrollAnimationDuration={1000}
         // onSnapToItem={}
-        renderItem={({ index }) => <MovieCard />}
+        renderItem={({ index }) => <MovieCard navigation={navigation} />}
       />
     </View>
   );
@@ -64,7 +60,7 @@ const TrendingMovies = ({ data }) => {
 
 export default TrendingMovies;
 
-const MovieCard = ({ focus }) => {
+const MovieCard = ({ focus, item, navigation }) => {
   return (
     <View
       style={{
@@ -73,10 +69,10 @@ const MovieCard = ({ focus }) => {
         justifyContent: "center",
         alignItems: "center",
       }}>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback
+        onPress={() => navigation.navigate("MovieScreen")}>
         <Image
           source={require("../assets/images/LegoNinjagoMoviePoster2.png")}
-          onPress={(item) => handleClick(item)}
           style={
             !focus
               ? {
