@@ -85,9 +85,8 @@ const Profile = ({ data }) => {
                     marginTop: 20,
                     marginBottom: 40
                 }}>
-                    <RectButton>
-                        {/* need to make changes to button fr */}
-                    </RectButton>
+                    {/* need to make changes to button fr */}
+                    <RectButton/>
                 </View>
             </ScrollView>
         </View>
