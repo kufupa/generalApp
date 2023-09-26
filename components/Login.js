@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ActivityIndicator, Button } from 'react-native';
-import FIREBASE_AUTH from '../FirebaseConfig'
+import { View, Text, ActivityIndicator, Button, StyleSheet } from 'react-native';
+import { FIREBASE_AUTH } from '../FirebaseConfig';
 import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
 import { TextInput } from 'react-native-gesture-handler';
 
@@ -41,9 +41,9 @@ const Login = () => {
     return (
         <View style={styles.container}>
             <TextInput style={styles.input} placeholder='Email' autoCapitalize='none'
-            onChangeText={(text) => setEmail(text)} value='email'></TextInput>
+            onChangeText={(text) => setEmail(text)}></TextInput>
             <TextInput style={styles.input} placeholder='Password' autoCapitalize='none'
-            onChangeText={(text) => setPassword(text)} value='password' secureTextEntry={true}></TextInput>
+            onChangeText={(text) => setPassword(text)} secureTextEntry={true}></TextInput>
             { loading ? <ActivityIndicator size="large" color='#0000ff' />
             : <>
             <Button title="Login" onPress={signIn} />
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     input: {
+        justifyContent: 'center',
         marginVertical: 4,
         height: 50,
         borderWidth: 1,

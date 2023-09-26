@@ -8,6 +8,7 @@ import DetailsBid from "./DetailsBid"
 import Background from "./Background";
 import HorizontalList from "./HorizontalList";
 import SubInfo from "./SubInfo";
+import Login from "./Login";
 
-export {HomeHeader, FocusedStatusBar, NFTCard, CircleButton, RectButton, SlideTest, Background, HorizontalList, SubInfo,
+export {HomeHeader, FocusedStatusBar, NFTCard, CircleButton, RectButton, SlideTest, Background, HorizontalList, SubInfo, Login,
   DetailsDesc, DetailsBid};
