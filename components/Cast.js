@@ -62,12 +62,21 @@ export default function Cast({ cast, navigation }) {
                   />
                 </View>
 
-                <Text className="text-white text-xs mt-1">
+                <Text
+                  style={{
+                    color: "white", // 'text-white' sets the text color to white
+                    fontSize: "0.75rem", // 'text-xs' sets the font size to extra small
+                    marginTop: "0.25rem", // 'mt-1' adds a top margin of 0.25rem
+                  }}>
                   {person?.character.length > 10
                     ? person.character.slice(0, 10) + "..."
                     : person?.character}
                 </Text>
-                <Text className="text-neutral-400 text-xs">
+                <Text
+                  style={{
+                    color: "#CCCCCC", // 'text-neutral-400' sets the text color to a neutral shade
+                    fontSize: "0.75rem", // 'text-xs' sets the font size to extra small
+                  }}>
                   {person?.original_name.length > 10
                     ? person.original_name.slice(0, 10) + "..."
                     : person?.original_name}
