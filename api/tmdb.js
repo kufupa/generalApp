@@ -4,8 +4,8 @@ const apiKey = "ec72c7be54b27ad4e62987e3cfbb48c5";
 
 // endpoints
 const apiBaseUrl = "https://api.themoviedb.org/3";
-const popularMoviesEndpoint = `${apiBaseUrl}/movie/popular?api_key=${apiKey}`;
 const nowPlayingMoviesEndpoint = `${apiBaseUrl}/movie/now_playing?api_key=${apiKey}`;
+const popularMoviesEndpoint = `${apiBaseUrl}/movie/popular?api_key=${apiKey}`;
 const topRatedMoviesEndpoint = `${apiBaseUrl}/movie/top_rated?api_key=${apiKey}`;
 const searchMoviesEndpoint = `${apiBaseUrl}/search/movie?api_key=${apiKey}`;
 
@@ -61,9 +61,6 @@ export const fetchNowPlayingMovies = () => {
 };
 export const fetchPopularMovies = () => {
   return apiCall(popularMoviesEndpoint);
-};
-export const fetchUpcomingMovies = () => {
-  return apiCall(upcomingMoviesEndpoint);
 };
 export const fetchTopRatedMovies = () => {
   return apiCall(topRatedMoviesEndpoint);
