@@ -20,7 +20,7 @@ import { styles } from "../theme";
 const { width, height } = Dimensions.get("window");
 import { SIZES } from "../constants";
 
-export default function MovieList({ title, hideSeeAll, data }) {
+export default function MovieList({ title, data }) {
   const navigation = useNavigation();
 
   const handleClick = (item) => {
@@ -52,14 +52,14 @@ export default function MovieList({ title, hideSeeAll, data }) {
           {title}
         </Text>
         {/* {!hideSeeAll && ( */}
-        <TouchableOpacity>
+        {/* <TouchableOpacity>
           <Text
             style={[styles.text, { fontSize: 17 }]}
             // className="text-lg"
           >
             See All
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         {/* )} */}
       </View>
 

@@ -7,7 +7,7 @@ import {
   Dimensions,
 } from "react-native";
 import React from "react";
-import { fallbackPersonImage, image185, image342 } from "../api/moviedb";
+import { fallbackPersonImage, image185 } from "../api/tmdb";
 var { width, height } = Dimensions.get("window");
 
 export default function Cast({ cast, navigation }) {
