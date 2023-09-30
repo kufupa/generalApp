@@ -14,7 +14,10 @@ import {
 import TrendingMovies from "../components/TrendingMovies";
 import MovieList from "../components/MovieList";
 
+import { fetchTrendingMovies } from "../api/tmdb";
+
 const Home = () => {
+  console.log(fetchTrendingMovies());
   const [nftData, setNftData] = useState(NFTData);
   const [trending, setTrending] = useState([1, 2, 3]);
   const [upcoming, setUpcoming] = useState([1, 2, 3]);
