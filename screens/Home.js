@@ -1,5 +1,5 @@
 import { Text, View, SafeAreaView, FlatList, ScrollView } from "react-native";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // Flatlist = lazy loading when on / off screen so pretty gamer
 
@@ -17,10 +17,18 @@ import MovieList from "../components/MovieList";
 import { fetchTrendingMovies } from "../api/tmdb";
 
 const Home = () => {
-  console.log(fetchTrendingMovies());
   const [nftData, setNftData] = useState(NFTData);
   const [trending, setTrending] = useState([1, 2, 3]);
   const [upcoming, setUpcoming] = useState([1, 2, 3]);
+
+  const getTrending = async () => {
+    const data = await fetchTrendingMovies();
+    console.log(data);
+  };
+
+  useEffect(() => {
+    getTrending();
+  }, []);
 
   const handleSearch = (value) => {
     // If user hasn't typed anything
