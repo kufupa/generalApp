@@ -8,22 +8,12 @@ import {
 } from "react-native";
 import React from "react";
 import { fallbackPersonImage, image185, image342 } from "../api/moviedb";
+var { width, height } = Dimensions.get("window");
 
 export default function Cast({ cast, navigation }) {
   return (
-    <View
-      style={{
-        marginVertical: 6,
-      }}>
-      <Text
-        style={{
-          color: "white",
-          fontSize: 15,
-          marginHorizontal: 4,
-          marginBottom: 5,
-        }}>
-        Top Cast
-      </Text>
+    <View className="my-6">
+      <Text className="text-white text-lg mx-4 mb-5">Top Cast</Text>
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -34,49 +24,25 @@ export default function Cast({ cast, navigation }) {
               <TouchableOpacity
                 key={index}
                 onPress={() => navigation.navigate("Person", person)}
-                style={{
-                  marginRight: 4,
-                  align: "center",
-                }}>
+                style={tw`mr-4 items-center`}>
                 <View
-                  style={{
-                    overflow: "hidden",
-                    borderRadius: "50%", // 'rounded-full' corresponds to a full circle
-                    height: "20px", // You may need to adjust the size as needed
-                    width: "20px", // You may need to adjust the size as needed
-                    display: "flex", // 'items-center' centers the content horizontally
-                    alignItems: "center", // 'items-center' centers the content vertically
-                    border: "1px solid #CCCCCC", // 'border' and 'border-neutral-500' set the border styles
-                  }}>
+                  style={tw`overflow-hidden rounded-full h-20 w-20 items-center border border-neutral-500`}>
                   <Image
-                    style={{
-                      borderRadius: "1rem",
-                      height: "24px",
-                      width: "20px",
+                    style={tw`rounded-2xl h-24 w-20`}
+                    // source={require('../assets/images/castImage1.png')}
+                    source={{
+                      uri:
+                        image185(person?.profile_path) || fallbackPersonImage,
                     }}
-                    source={require("../assets/images/castImage1.png")}
-                    // source={{
-                    //   uri:
-                    //     image185(person?.profile_path) || fallbackPersonImage,
-                    // }}
                   />
                 </View>
 
-                <Text
-                  style={{
-                    color: "white", // 'text-white' sets the text color to white
-                    fontSize: "0.75rem", // 'text-xs' sets the font size to extra small
-                    marginTop: "0.25rem", // 'mt-1' adds a top margin of 0.25rem
-                  }}>
+                <Text style={tw`text-white text-xs mt-1`}>
                   {person?.character.length > 10
                     ? person.character.slice(0, 10) + "..."
                     : person?.character}
                 </Text>
-                <Text
-                  style={{
-                    color: "#CCCCCC", // 'text-neutral-400' sets the text color to a neutral shade
-                    fontSize: "0.75rem", // 'text-xs' sets the font size to extra small
-                  }}>
+                <Text style={tw`text-neutral-400 text-xs`}>
                   {person?.original_name.length > 10
                     ? person.original_name.slice(0, 10) + "..."
                     : person?.original_name}
