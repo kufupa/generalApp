@@ -55,6 +55,10 @@ const apiCall = async (endpoint, params) => {
   }
 };
 
+export const baseImagePath = (path) => {
+  return `https://image.tmdb.org/t/p/original${path}`;
+};
+
 // home screen apis
 export const fetchNowPlayingMovies = () => {
   return apiCall(nowPlayingMoviesEndpoint);
