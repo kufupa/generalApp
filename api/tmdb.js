@@ -77,14 +77,6 @@ export const fetchSimilarMovies = (movieId) => {
   return apiCall(similarMoviesEndpoint(movieId));
 };
 
-// person screen apis
-export const fetchPersonDetails = (personId) => {
-  return apiCall(personDetailsEndpoint(personId));
-};
-export const fetchPersonMovies = (personId) => {
-  return apiCall(personMoviesEndpoint(personId));
-};
-
 // search screen apis
 export const searchMovies = (params) => {
   return apiCall(searchMoviesEndpoint, params);
