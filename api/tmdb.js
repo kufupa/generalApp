@@ -4,6 +4,7 @@ const apiKey = "ec72c7be54b27ad4e62987e3cfbb48c5";
 
 // endpoints
 const apiBaseUrl = "https://api.themoviedb.org/3";
+const trendingMoviesEndpoint = `${apiBaseUrl}/trending/movie/day?api_key=${apiKey}`;
 const nowPlayingMoviesEndpoint = `${apiBaseUrl}/movie/now_playing?api_key=${apiKey}`;
 const popularMoviesEndpoint = `${apiBaseUrl}/movie/popular?api_key=${apiKey}`;
 const topRatedMoviesEndpoint = `${apiBaseUrl}/movie/top_rated?api_key=${apiKey}`;
@@ -60,6 +61,9 @@ export const baseImagePath = (path) => {
 };
 
 // home screen apis
+export const fetchTrendingMovies = () => {
+  return apiCall(trendingMoviesEndpoint);
+};
 export const fetchNowPlayingMovies = () => {
   return apiCall(nowPlayingMoviesEndpoint);
 };
